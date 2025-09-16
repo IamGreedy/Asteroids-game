@@ -1,3 +1,33 @@
+# --- Fichiers Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Virtualenv ---
+venv/
+.env/
+.venv/
+
+# --- Config éditeurs ---
+.vscode/
+.idea/
+
+# --- Fichiers système ---
+.DS_Store
+Thumbs.db
+
+# --- Logs & temporaires ---
+*.log
+*.tmp
+
+# --- Build / distribution ---
+build/
+dist/
+*.egg-info/
+
+# --- Sauvegardes ---
+*~
 # Python-generated files
 __pycache__/
 *.py[oc]
