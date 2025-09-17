@@ -4,6 +4,7 @@ from player import Player
 from asteroid import Asteroid
 from AsteroidsField import AsteroidField
 from Shot import shot
+from circleshape import CircleShape
 
 def main():
     pygame.init()
@@ -34,6 +35,10 @@ def main():
                 print ("Game Over")
                 pygame.quit()
                 raise SystemExit
+            for s in Shots:
+                if a.check_collisions(s):
+                    a.kill()
+                    s.kill()
         for obj in Drawable:
             obj.draw(screen)
         pygame.display.flip()
