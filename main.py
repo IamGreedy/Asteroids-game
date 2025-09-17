@@ -32,12 +32,18 @@ def main():
         Updatable.update(dt)
         for a in Asteroids:
             if player.check_collisions(a):
+                font = pygame.font.Font(None, 74)
+                text = font.render("GAME OVER", True, (255, 0, 0))
+                text_rect = text.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
+                screen.blit(text, text_rect)
+                pygame.display.flip()
+                pygame.time.wait(2000)
                 print ("Game Over")
                 pygame.quit()
                 raise SystemExit
             for s in Shots:
                 if a.check_collisions(s):
-                    a.kill()
+                    a.split()
                     s.kill()
         for obj in Drawable:
             obj.draw(screen)
